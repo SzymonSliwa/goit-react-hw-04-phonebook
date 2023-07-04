@@ -1,9 +1,6 @@
 import propTypes from 'prop-types';
 
 export const ContactList = ({ contacts, onDeleteContact }) => {
-  //  console.log(contacts);
-  //  const pupa = contacts.map(({ number }) => ({ number }));
-  // console.log(pupa);
   return (
     <div>
       <ul>

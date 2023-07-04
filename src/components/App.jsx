@@ -19,24 +19,18 @@ const App = () => {
 
   useEffect(() => {
     const currentContacts = JSON.parse(localStorage.getItem('contacts'));
-    //   const parsedContacts = JSON.parse(currentContacts);
+
     if (currentContacts) {
       setContacts(currentContacts);
     }
   }, []);
-  //  console.log(contacts);
-
-  // console.log(getContacts);
 
   //componentDidUpdate
-  //  if (prevState.contacts !== this.state.contacts) {
 
   useEffect(() => {
     if (previous => previous !== contacts) {
-      console.log(contacts);
       localStorage.setItem('contacts', JSON.stringify(contacts));
     }
-    console.log(contacts);
   }, [contacts]);
 
   const handleSubmit = ({ name, number }) => {
@@ -53,28 +47,12 @@ const App = () => {
     setContacts(updatedContacts);
   };
 
-  //    setContacts(prevState => {
-  //       return [...prevState, contact];
-  //      });
-  //    }
-  //  };
-
   const deleteContact = contactId => {
     const updatedContacts = contacts.filter(
       contact => contact.id !== contactId
     );
     setContacts(updatedContacts);
   };
-  //    => {
-  //    return [...prevState].filter(({ id }) => id !== contactId);
-  //  });
-  // };
-
-  // const updatedContacts = this.state.contacts.filter(
-  //     contact => contact.id !== id
-  //   );
-  //   this.setState({ contacts: updatedContacts });
-  //  };
 
   const filterContacts = evt => {
     setFilter(evt.currentTarget.value);
@@ -88,13 +66,6 @@ const App = () => {
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
   };
-
-  // } contacts.filter(contact =>
-  //  contact.name.toLowerCase().includes(filter.toLowerCase())
-  // );
-
-  //const filter = this.state.filter;
-  //const contacts = this.state.contacts;
 
   return (
     <div

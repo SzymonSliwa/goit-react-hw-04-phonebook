@@ -27,8 +27,6 @@ export const ContactForm = ({ addContact }) => {
     setNumber(e.target.value);
   };
 
-  // render() {
-  //   const { name, number } = this.state;
   return (
     <form onSubmit={handleSubmit}>
       <div className="formfield">
